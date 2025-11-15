@@ -164,6 +164,211 @@ main {
 .arrow-btn.prev {
   left: 25px;
   background-color: #e53935;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f6fbf9;
+  color: #333;
+}
+
+/* === Header === */
+header {
+  text-align: center;
+  padding: 25px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #004d40;
+}
+
+.underline {
+  width: 80%;
+  height: 4px;
+  background-color: #a5d6a7;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* === Halaman Utama === */
+.main-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.card-list {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.card-item {
+  display: block;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.card-item:hover {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+.card-item:last-child {
+  border-bottom: none;
+}
+
+/* === Halaman Detail === */
+.detail-container {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.detail-container h2 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.detail-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* === Tombol Navigasi === */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-red {
+  background-color: #e53935;
+}
+
+.btn-red:hover {
+  background-color: #c62828;
+}
+
+.btn-blue {
+  background-color: #1e88e5;
+}
+
+.btn-blue:hover {
+  background-color: #1565c0;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* === Responsif === */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* === STRUKTUR UMUM === */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Biar main isi sisa ruang di tengah */
+main {
+  flex: 1;
+}
+
+/* === HEADER === */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 0;
+}
+
+.home-btn {
+  position: absolute;
+  left: 20px;
+  color: #2e7d32;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.1);
+  color: #1b5e20;
+}
+
+/* === TOMBOL PANAH MENGAMBANG === */
+.arrow-btn {
+  position: fixed;
+  bottom: 25px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.arrow-btn.next {
+  right: 25px;
+  background-color: #1e88e5;
+}
+.arrow-btn.next:hover {
+  background-color: #1565c0;
+  transform: translateY(-3px);
+}
+
+.arrow-btn.prev {
+  left: 25px;
+  background-color: #e53935;
 }
 .arrow-btn.prev:hover {
   background-color: #c62828;
