@@ -1,97 +1,184 @@
-/* === STRUKTUR UMUM === */
-html, body {
-  height: 100%;
+/* ===== RESET DASAR ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+  color: #333;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Biar main isi sisa ruang di tengah */
-main {
-  flex: 1;
+/* ===== HEADER ===== */
+header {
+  background: #ffffff;
+  padding: 20px 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #eee;
 }
 
-/* === HEADER === */
 .header-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  padding: 10px 0;
+  gap: 15px;
 }
 
 .home-btn {
   position: absolute;
-  left: 20px;
-  color: #2e7d32;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: transform 0.2s ease, color 0.2s ease;
+  left: 15px;
+  top: 22px;
+  font-size: 22px;
+  color: #333;
 }
 
-.home-btn:hover {
-  transform: scale(1.1);
-  color: #1b5e20;
+header h1 {
+  font-size: 20px;
+  font-weight: 600;
 }
 
-/* === TOMBOL PANAH MENGAMBANG === */
+/* ===== GARIS BAWAH HEADER ===== */
+.underline {
+  width: 100%;
+  height: 2px;
+  background: #e5e5e5;
+  margin-top: 10px;
+}
+
+/* ===== HALAMAN UTAMA: KARTU ===== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 25px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== HALAMAN DETAIL ===== */
+.detail-container {
+  max-width: 750px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.detail-container h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.detail-container h3 {
+  margin: 18px 0 8px;
+  font-size: 18px;
+}
+
+.detail-container p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+blockquote {
+  background: #f3f3f3;
+  padding: 12px;
+  border-left: 4px solid #333;
+  font-style: italic;
+  margin: 12px 0;
+  border-radius: 6px;
+}
+
+/* ===== TOMBOL PANAH ===== */
 .arrow-btn {
   position: fixed;
-  bottom: 25px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
   color: white;
-  font-size: 1.3rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  z-index: 10;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  padding: 12px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  z-index: 20;
+  transition: 0.3s;
 }
 
-.arrow-btn.next {
-  right: 25px;
-  background-color: #1e88e5;
-}
-.arrow-btn.next:hover {
-  background-color: #1565c0;
-  transform: translateY(-3px);
+.arrow-btn:hover {
+  background: #555;
 }
 
-.arrow-btn.prev {
-  left: 25px;
-  background-color: #e53935;
-}
-.arrow-btn.prev:hover {
-  background-color: #c62828;
-  transform: translateY(-3px);
+/* Panah kiri (kembali) */
+.prev {
+  left: 15px;
 }
 
-/* === FOOTER === */
+/* Panah kanan (lanjut) */
+.next {
+  right: 15px;
+}
+
+/* ===== FOOTER ===== */
 footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 14px;
-  color: #333;
-  border-top: 2px solid #ddd;
   margin-top: auto;
+  background: #ffffff;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 2px solid #eee;
 }
 
-/* === RESPONSIF === */
-@media (max-width: 600px) {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 16px;
+  }
+
   .home-btn {
-    left: 15px;
-    font-size: 1.4rem;
+    font-size: 20px;
+    top: 20px;
+  }
+
+  .detail-container {
+    padding: 22px 18px;
   }
 
   .arrow-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 1.1rem;
-    bottom: 20px;
+    padding: 10px 11px;
+    font-size: 18px;
   }
 }
